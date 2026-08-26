@@ -1,11 +1,8 @@
 "use client";
-
 import Link from "next/link";
 import { useState } from "react";
-
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <header className="bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 text-white sticky top-0 z-50 shadow-lg">
       <div className="container mx-auto px-4">
@@ -16,23 +13,12 @@ export default function Header() {
               🎰 Cassanova
             </div>
           </Link>
-
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link href="/games" className="hover:text-yellow-400 transition-colors font-medium">
               Games
             </Link>
-            <Link href="/live-casino" className="hover:text-yellow-400 transition-colors font-medium">
-              Live Casino
-            </Link>
-            <Link href="/promotions" className="hover:text-yellow-400 transition-colors font-medium">
-              Promotions
-            </Link>
-            <Link href="/vip" className="hover:text-yellow-400 transition-colors font-medium">
-              VIP
-            </Link>
           </nav>
-
           {/* Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <Link
@@ -48,7 +34,6 @@ export default function Header() {
               Sign Up
             </Link>
           </div>
-
           {/* Mobile Menu Button */}
           <button
             className="md:hidden text-white"
@@ -61,22 +46,12 @@ export default function Header() {
             </svg>
           </button>
         </div>
-
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-white/10">
             <nav className="flex flex-col space-y-4">
               <Link href="/games" className="hover:text-yellow-400 transition-colors">
                 Games
-              </Link>
-              <Link href="/live-casino" className="hover:text-yellow-400 transition-colors">
-                Live Casino
-              </Link>
-              <Link href="/promotions" className="hover:text-yellow-400 transition-colors">
-                Promotions
-              </Link>
-              <Link href="/vip" className="hover:text-yellow-400 transition-colors">
-                VIP
               </Link>
               <Link href="/login" className="hover:text-yellow-400 transition-colors">
                 Log In
